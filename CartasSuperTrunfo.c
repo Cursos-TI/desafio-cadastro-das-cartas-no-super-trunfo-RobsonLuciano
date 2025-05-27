@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -17,6 +18,97 @@ int main() {
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+     // Cartas
+    char estadoC01, estadoC02;
+    char CodC01[4], CodC02[4];
+    char cidade01[50], cidade02[50];
+    int populacao01, populacao02, PonTurist01, PonTurist02;
+    float area01, area02, pib01, pib02;
+
+    int c;
+
+    // Cadastro das cartas
+
+    //Carta 01
+    printf("Vamos cadastrar as cartas para nosso jogo.\n");
+    printf("Carta 01.\n");
+
+    printf("Insira uma letra de A a H para representar um dos 8 estados: ");
+    scanf(" %c", &estadoC01);
+
+    printf("Agora vamos cadastrar um código para a carta 01. Insira a letra que você escolheu mais um número. Ex: A01: ");
+    scanf("%3s", CodC01); 
+
+    // Limpa o buffer antes do fgets
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    printf("Insira o nome da Cidade: ");
+    fgets(cidade01, sizeof(cidade01), stdin);
+
+    // Remove o \n do final
+    cidade01[strcspn(cidade01, "\n")] = '\0'; 
+
+    printf("Insira o número de Habitantes da cidade: ");
+    scanf("%d", &populacao01);
+
+    printf("Insira a Área da cidade: ");
+    scanf("%f", &area01); 
+
+    printf("Insira o PIB da cidade: ");
+    scanf("%f", &pib01);
+
+    printf("Insira a quantidade de pontos turísticos na cidade: ");
+    scanf("%d", &PonTurist01);
+
+    //Carta 02
+    printf("Agora a Carta 02.\n");
+
+    printf("Insira uma letra de A a H para representar um dos 8 estados: ");
+    scanf(" %c", &estadoC02);
+
+    printf("Agora vamos cadastrar um código para a carta 01. Insira a letra que você escolheu mais um número. Ex: A01: ");
+    scanf("%3s", CodC02); 
+
+    // Limpa o buffer antes do fgets
+    while ((c = getchar()) != '\n' && c != EOF); 
+
+    printf("Insira o nome da Cidade: ");
+    fgets(cidade02, sizeof(cidade02), stdin);
+
+    // Remove o \n do final
+    cidade02[strcspn(cidade02, "\n")] = '\0'; 
+
+    printf("Insira o número de Habitantes da cidade: ");
+    scanf("%d", &populacao02);
+
+    printf("Insira a Área da cidade: ");
+    scanf("%f", &area02); 
+
+    printf("Insira o PIB da cidade: ");
+    scanf("%f", &pib02);
+
+    printf("Insira a quantidade de pontos turísticos na cidade: ");
+    scanf("%d", &PonTurist02);
+
+    // Leitura das cartas
+    printf("\n--- CARTA 01 ---\n");
+    printf("Estado: %c\n", estadoC01);
+    printf("Código: %s\n", CodC01);
+    printf("Nome da Cidade: %s\n", cidade01);
+    printf("População: %d\n", populacao01);
+    printf("Área: %.2f Km²\n", area01);
+    printf("PIB: %.2f\n", pib01);
+    printf("Número de Pontos Turísticos: %d\n", PonTurist01);
+
+    printf("\n--- CARTA 02 ---\n");
+    printf("Estado: %c\n", estadoC02);
+    printf("Código: %s\n", CodC02);
+    printf("Nome da Cidade: %s\n", cidade02);
+    printf("População: %d\n", populacao02);
+    printf("Área: %.2f Km²\n", area02);
+    printf("PIB: %.2f\n", pib02);
+    printf("Número de Pontos Turísticos: %d\n", PonTurist02);
 
     return 0;
+    
 }
